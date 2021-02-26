@@ -1,11 +1,16 @@
 package com.mgg;
 
 public class NewProduct extends Item {
+	
+	public Double basePrice;
 
-	public NewProduct(String code, String type, String name, Double basePrice, Double cost, String typeName) {
-		super(code, type, name, basePrice);
-		this.cost = cost;
-		this.typeName = typeName;
+	public NewProduct(String code, String type, String name, Double basePrice) {
+		super(code, type, name);
+		this.basePrice = basePrice;
+	}
+	
+	public Double getBasePrice() {
+		return basePrice;
 	}
 	
 	@Override
@@ -15,7 +20,7 @@ public class NewProduct extends Item {
 	
 	@Override
 	public Double getCost() {
-		return this.getBasePrice() + (this.getBasePrice() * 0.0725);
+		return this.basePrice + (this.basePrice * 0.0725);
 	}
 	
 }

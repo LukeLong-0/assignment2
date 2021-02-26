@@ -4,6 +4,15 @@ import java.util.HashSet;
 import java.util.Set;
 
 public abstract class Person {
+	
+	private String personCode;
+	protected char membershipCode;
+	private String lastName;
+	private String firstName;
+	private Address address;
+	private Set<String> emails = new HashSet<String>();
+	protected String membershipType;
+	protected Double discount;
 
 	public Person(String personCode, char membershipCode, String lastName, String firstName,
 				Address address, Set<String> emails) {
@@ -16,33 +25,28 @@ public abstract class Person {
 		this.emails = emails;
 	}
 	
-	private String personCode;
-	protected char membershipCode;
-	private String lastName;
-	private String firstName;
-	private Address address;
-	private Set<String> emails = new HashSet<String>();
-	protected String membershipType;
-	protected Double discount;
-	
 	public String getPersonCode() {
 		return personCode;
+	}
+	
+	public char getMembershipCode() {
+		return membershipCode;
 	}
 	
 	public String getLastName() {
 		return lastName;
 	}
+	
 	public String getFirstName() {
 		return firstName;
 	}
+	
 	public Address getAddress() {
 		return address;
 	}
+	
 	public Set<String> getEmails() {
 		return emails;
-	}
-	public char getMembershipCode() {
-		return membershipCode;
 	}
 	
 	public abstract String getMembershipType();

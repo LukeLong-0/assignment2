@@ -1,6 +1,12 @@
 package com.mgg;
 
 public class Address {
+	
+	private String street;
+	private String city;
+	private String state;
+	private int zip;
+	private String country;
 
 	public Address(String street, String city, String state, int zip, String country) {
 		super();
@@ -10,12 +16,6 @@ public class Address {
 		this.zip = zip;
 		this.country = country;
 	}
-	
-	private String street;
-	private String city;
-	private String state;
-	private int zip;
-	private String country;
 	
 	public String getStreet() {
 		return street;
