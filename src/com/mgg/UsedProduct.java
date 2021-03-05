@@ -4,7 +4,7 @@ public class UsedProduct extends Item {
 	
 	public Double basePrice;
 
-	public UsedProduct(String code, String type, String name) {
+	public UsedProduct(String code, String type, String name, Double basePrice) {
 		super(code, type, name);
 		this.basePrice = basePrice;
 	}

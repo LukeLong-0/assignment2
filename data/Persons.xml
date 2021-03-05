@@ -1,0 +1,203 @@
+<Employee>
+  <personCode>fdc267</personCode>
+  <lastName>Quarry</lastName>
+  <firstName>Staci</firstName>
+  <address>
+    <street>601 Lotheville Road</street>
+    <city>Savannah</city>
+    <state>GA</state>
+    <zip>31405</zip>
+    <country>US</country>
+  </address>
+  <emails>
+    <string>squarry0@salon.com</string>
+    <string>squarry0@reverbnation.com</string>
+  </emails>
+</Employee>
+<Employee>
+  <personCode>0375b6</personCode>
+  <lastName>Michelotti</lastName>
+  <firstName>Nonnah</firstName>
+  <address>
+    <street>0 Havey Avenue</street>
+    <city>Cleveland</city>
+    <state>OH</state>
+    <zip>44177</zip>
+    <country>US</country>
+  </address>
+  <emails>
+    <string>nmichelotti1@vistaprint.com</string>
+    <string>nmichelotti1@gravatar.com</string>
+    <string>nmichelotti1@sbwire.com</string>
+    <string>nmichelotti1@patch.com</string>
+  </emails>
+</Employee>
+<Employee>
+  <personCode>aa887a</personCode>
+  <lastName>Leavold</lastName>
+  <firstName>Wit</firstName>
+  <address>
+    <street>65337 Straubel Place</street>
+    <city>Muncie</city>
+    <state>IN</state>
+    <zip>47306</zip>
+    <country>US</country>
+  </address>
+  <emails>
+    <string>wleavold2@npr.org</string>
+    <string>wleavold2@craigslist.org</string>
+  </emails>
+</Employee>
+<Platinum>
+  <personCode>cefa4f</personCode>
+  <lastName>Cullington</lastName>
+  <firstName>Zara</firstName>
+  <address>
+    <street>81 Northport Avenue</street>
+    <city>Mobile</city>
+    <state>AL</state>
+    <zip>36628</zip>
+    <country>US</country>
+  </address>
+  <emails>
+    <string>zcullington3@google.es</string>
+    <string>zcullington3@engadget.com</string>
+    <string>zcullington3@wisc.edu</string>
+    <string>zcullington3@google.pl</string>
+  </emails>
+</Platinum>
+<Platinum>
+  <personCode>48b5dc</personCode>
+  <lastName>Leaming</lastName>
+  <firstName>Frants</firstName>
+  <address>
+    <street>7 Sunbrook Center</street>
+    <city>Young America</city>
+    <state>MN</state>
+    <zip>55551</zip>
+    <country>US</country>
+  </address>
+  <emails>
+    <string>fleaming4@elpais.com</string>
+    <string>fleaming4@hugedomains.com</string>
+    <string>fleaming4@unblog.fr</string>
+  </emails>
+</Platinum>
+<Platinum>
+  <personCode>529dbe</personCode>
+  <lastName>Stammers</lastName>
+  <firstName>Bernadette</firstName>
+  <address>
+    <street>33 Lake View Alley</street>
+    <city>Roanoke</city>
+    <state>VA</state>
+    <zip>24040</zip>
+    <country>US</country>
+  </address>
+  <emails>
+    <string>bstammers5@flickr.com</string>
+    <string>bstammers5@mapy.cz</string>
+    <string>bstammers5@cpanel.net</string>
+  </emails>
+</Platinum>
+<Gold>
+  <personCode>aef60b</personCode>
+  <lastName>Uttley</lastName>
+  <firstName>Gianni</firstName>
+  <address>
+    <street>6811 Pleasure Point</street>
+    <city>Salinas</city>
+    <state>CA</state>
+    <zip>93907</zip>
+    <country>US</country>
+  </address>
+  <emails>
+    <string>guttley6@sogou.com</string>
+    <string>guttley6@linkedin.com</string>
+    <string>guttley6@latimes.com</string>
+  </emails>
+</Gold>
+<Gold>
+  <personCode>8197d3</personCode>
+  <lastName>Halse</lastName>
+  <firstName>Farand</firstName>
+  <address>
+    <street>37 Hoard Circle</street>
+    <city>Plano</city>
+    <state>TX</state>
+    <zip>75074</zip>
+    <country>US</country>
+  </address>
+  <emails>
+    <string>fhalse7@moonfruit.com</string>
+    <string>fhalse7@fc2.com</string>
+    <string>fhalse7@europa.eu</string>
+    <string>fhalse7@microsoft.com</string>
+  </emails>
+</Gold>
+<Gold>
+  <personCode>f22d0b</personCode>
+  <lastName>Witherbed</lastName>
+  <firstName>Denny</firstName>
+  <address>
+    <street>40 Aberg Avenue</street>
+    <city>Fresno</city>
+    <state>CA</state>
+    <zip>93786</zip>
+    <country>US</country>
+  </address>
+  <emails>
+    <string>dwitherbed8@privacy.gov.au</string>
+    <string>dwitherbed8@pbs.org</string>
+    <string>dwitherbed8@umich.edu</string>
+  </emails>
+</Gold>
+<Customer>
+  <personCode>d78da4</personCode>
+  <lastName>Soloway</lastName>
+  <firstName>Keslie</firstName>
+  <address>
+    <street>5595 Saint Paul Place</street>
+    <city>Annapolis</city>
+    <state>MD</state>
+    <zip>21405</zip>
+    <country>US</country>
+  </address>
+  <emails>
+    <string>ksoloway9@sitemeter.com</string>
+    <string>ksoloway9@cmu.edu</string>
+    <string>ksoloway9@unicef.org</string>
+    <string>ksoloway9@amazon.co.uk</string>
+  </emails>
+</Customer>
+<Customer>
+  <personCode>99cdc9</personCode>
+  <lastName>Antoshin</lastName>
+  <firstName>Rice</firstName>
+  <address>
+    <street>3 5th Junction</street>
+    <city>Fort Collins</city>
+    <state>CO</state>
+    <zip>80525</zip>
+    <country>US</country>
+  </address>
+  <emails>
+    <string>rantoshina@sfgate.com</string>
+    <string>rantoshina@economist.com</string>
+    <string>rantoshina@amazonaws.com</string>
+    <string>rantoshina@cam.ac.uk</string>
+  </emails>
+</Customer>
+<Customer>
+  <personCode>89a8a1</personCode>
+  <lastName>Pottie</lastName>
+  <firstName>Portia</firstName>
+  <address>
+    <street>427 Nevada Pass</street>
+    <city>Toledo</city>
+    <state>OH</state>
+    <zip>43656</zip>
+    <country>US</country>
+  </address>
+  <emails/>
+</Customer>

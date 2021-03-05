@@ -6,7 +6,7 @@ import java.util.Set;
 public abstract class Person {
 	
 	private String personCode;
-	protected char membershipCode;
+	protected static char membershipCode;
 	private String lastName;
 	private String firstName;
 	private Address address;
@@ -29,7 +29,7 @@ public abstract class Person {
 		return personCode;
 	}
 	
-	public char getMembershipCode() {
+	public static char getMembershipCode() {
 		return membershipCode;
 	}
 	
@@ -52,5 +52,6 @@ public abstract class Person {
 	public abstract String getMembershipType();
 		
 	public abstract Double getDiscount();
+	
 	
 }

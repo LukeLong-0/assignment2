@@ -11,6 +11,6 @@ llong9@huskers.unl.edu
 
 Vivian Nguyen
 
-TODO
+31759027
 
-TODO
+vnguyen38@huskers.unl.edu 

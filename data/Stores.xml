@@ -1,0 +1,55 @@
+<Store>
+  <storeCode>3c0234</storeCode>
+  <managerCode>fdc267</managerCode>
+  <address>
+    <street>2 Crest Line Way</street>
+    <city>New York City</city>
+    <state>NY</state>
+    <zip>10184</zip>
+    <country>US</country>
+  </address>
+</Store>
+<Store>
+  <storeCode>9f352c</storeCode>
+  <managerCode>aa887a</managerCode>
+  <address>
+    <street>438 Jenna Road</street>
+    <city>Huntsville</city>
+    <state>AL</state>
+    <zip>35815</zip>
+    <country>US</country>
+  </address>
+</Store>
+<Store>
+  <storeCode>73668b</storeCode>
+  <managerCode>fdc267</managerCode>
+  <address>
+    <street>9257 Maywood Junction</street>
+    <city>Phoenix</city>
+    <state>AZ</state>
+    <zip>85099</zip>
+    <country>US</country>
+  </address>
+</Store>
+<Store>
+  <storeCode>96f2cf</storeCode>
+  <managerCode>fdc267</managerCode>
+  <address>
+    <street>1145 Transport Drive</street>
+    <city>Gainesville</city>
+    <state>FL</state>
+    <zip>32605</zip>
+    <country>US</country>
+  </address>
+</Store>
+<Store>
+  <storeCode>25d901</storeCode>
+  <managerCode>aa887a</managerCode>
+  <address>
+    <street>180 Magdeline Plaza</street>
+    <city>Wichita</city>
+    <state>KS</state>
+    <zip>67230</zip>
+    <country>US</country>
+  </address>
+</Store>

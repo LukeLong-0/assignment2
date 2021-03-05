@@ -3,7 +3,7 @@ package com.mgg;
 public abstract class Item {
 	
 	private String code;
-	private String type;
+	private static String type;
 	private String name;
 	protected String typeName;
 	protected Double cost;
@@ -18,7 +18,7 @@ public abstract class Item {
 		return code;
 	}
 	
-	public String getType() {
+	public static String getType() {
 		return type;
 	}
 	

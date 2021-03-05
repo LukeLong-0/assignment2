@@ -4,13 +4,13 @@ public class GiftCard extends Item {
 	
 	public Double basePrice;
 
-	public GiftCard(String code, String type, String name) {
+	public GiftCard(String code, String type, String name, Double basePrice) {
 		super(code, type, name);
 		this.basePrice = basePrice;
 	}
 	
 	public Double getBasePrice() {
-		return basePrice;
+		return null;
 	}
 	
 	@Override

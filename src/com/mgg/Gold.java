@@ -7,7 +7,6 @@ public class Gold extends Person {
 	public Gold(String personCode, char membershipCode, String lastName, String firstName, Address address,
 			Set<String> emails) {
 		super(personCode, membershipCode, lastName, firstName, address, emails);
-		
 	}
 
 	@Override

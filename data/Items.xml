@@ -1,0 +1,86 @@
+<NewProduct>
+  <code>1d4d89</code>
+  <name>PlayStation 5 Digital Edition</name>
+  <basePrice>399.99</basePrice>
+</NewProduct>
+<NewProduct>
+  <code>1ed5b7</code>
+  <name>Nintendo Switch Lite</name>
+  <basePrice>199.99</basePrice>
+</NewProduct>
+<NewProduct>
+  <code>6ce4cd</code>
+  <name>Splatoon 2 (Digital Copy)</name>
+  <basePrice>59.99</basePrice>
+</NewProduct>
+<NewProduct>
+  <code>c547e7</code>
+  <name>Diet Mt Dew (20oz)</name>
+  <basePrice>1.99</basePrice>
+</NewProduct>
+<GiftCard>
+  <code>5f73aa</code>
+  <name>Nintendo Digital Gold</name>
+</GiftCard>
+<GiftCard>
+  <code>14e2b7</code>
+  <name>Steam</name>
+</GiftCard>
+<GiftCard>
+  <code>8a30ad</code>
+  <name>Android Store</name>
+</GiftCard>
+<GiftCard>
+  <code>daad6a</code>
+  <name>Robux</name>
+</GiftCard>
+<UsedProduct>
+  <code>649f88</code>
+  <name>Legend of Zelda (NES)</name>
+  <basePrice>24.5</basePrice>
+</UsedProduct>
+<UsedProduct>
+  <code>0ec6e9</code>
+  <name>Animal Crossings</name>
+  <basePrice>59.99</basePrice>
+</UsedProduct>
+<UsedProduct>
+  <code>9b6e30</code>
+  <name>Oculus Rift</name>
+  <basePrice>199.99</basePrice>
+</UsedProduct>
+<UsedProduct>
+  <code>40a433</code>
+  <name>Vive</name>
+  <basePrice>599.99</basePrice>
+</UsedProduct>
+<Service>
+  <code>8e366e</code>
+  <name>Console Repair</name>
+  <hourlyRate>59.99</hourlyRate>
+</Service>
+<Service>
+  <code>c4fb35</code>
+  <name>VR Party Rental</name>
+  <hourlyRate>120.0</hourlyRate>
+</Service>
+<Service>
+  <code>740515</code>
+  <name>Game Addiction Counseling</name>
+  <hourlyRate>1.99</hourlyRate>
+</Service>
+<Subscription>
+  <code>426dda</code>
+  <name>X-Box Live</name>
+  <annualFee>50.0</annualFee>
+</Subscription>
+<Subscription>
+  <code>dedd44</code>
+  <name>Nintendo Power magazine</name>
+  <annualFee>120.0</annualFee>
+</Subscription>
+<Subscription>
+  <code>3506f6</code>
+  <name>Disney Plus</name>
+  <annualFee>89.99</annualFee>
+</Subscription>
