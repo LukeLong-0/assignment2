@@ -1,5 +1,7 @@
 package com.mgg;
 
+//Models an employee, a type of person
+
 import java.util.Set;
 
 public class Employee extends Person {

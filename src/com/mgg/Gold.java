@@ -1,5 +1,7 @@
 package com.mgg;
 
+//Models the gold tier membership of Modern Geek Gaming
+
 import java.util.Set;
 
 public class Gold extends Person {

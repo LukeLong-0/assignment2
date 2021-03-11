@@ -1,5 +1,7 @@
 package com.mgg;
 
+//Models a gift card, a type of item
+
 public class GiftCard extends Item {
 	
 	public Double basePrice;

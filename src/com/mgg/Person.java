@@ -1,12 +1,14 @@
 package com.mgg;
 
+//Models a person (there are several subtypes of Person)
+
 import java.util.HashSet;
 import java.util.Set;
 
 public abstract class Person {
 	
 	private String personCode;
-	protected static char membershipCode;
+	private static char membershipCode;
 	private String lastName;
 	private String firstName;
 	private Address address;

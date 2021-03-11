@@ -1,15 +1,17 @@
 package com.mgg;
 
+//Models a Modern Geek Gaming store
+
 public class Store {
 	
 	private String storeCode;
-	private String managerCode;
+	private Person manager;
 	private Address address;
 
-	public Store(String storeCode, String managerCode, Address address) {
+	public Store(String storeCode, Person manager, Address address) {
 		super();
 		this.storeCode = storeCode;
-		this.managerCode = managerCode;
+		this.manager = manager;
 		this.address = address;
 	}
 	
@@ -17,8 +19,8 @@ public class Store {
 		return storeCode;
 	}
 	
-	public String getManagerCode() {
-		return managerCode;
+	public Person getManager() {
+		return manager;
 	}
 	
 	public Address getAddress() {

@@ -1,12 +1,14 @@
 package com.mgg;
 
+//Models an item (there are many subtypes of Item)
+
 public abstract class Item {
 	
 	private String code;
 	private static String type;
 	private String name;
-	protected String typeName;
-	protected Double cost;
+	private String typeName;
+	private Double cost;
 
 	public Item(String code, String type, String name) {
 		this.code = code;

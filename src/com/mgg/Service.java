@@ -1,5 +1,7 @@
 package com.mgg;
 
+//Models a Service, a type of item
+
 public class Service extends Item {
 	
 	private Double hourlyRate;

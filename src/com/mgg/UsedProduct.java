@@ -1,5 +1,8 @@
 package com.mgg;
 
+//Models a Used Product, a type of item
+
+
 public class UsedProduct extends Item {
 	
 	public Double basePrice;
@@ -15,7 +18,7 @@ public class UsedProduct extends Item {
 	
 	@Override
 	public String getTypeName() {
-		return "UsedProduct";
+		return "Used Product";
 	}
 	
 	@Override

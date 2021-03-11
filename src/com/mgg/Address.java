@@ -1,5 +1,7 @@
 package com.mgg;
 
+//Models an address for a person or a store
+
 public class Address {
 	
 	private String street;
@@ -9,7 +11,6 @@ public class Address {
 	private String country;
 
 	public Address(String street, String city, String state, int zip, String country) {
-		super();
 		this.street = street;
 		this.city = city;
 		this.state = state;

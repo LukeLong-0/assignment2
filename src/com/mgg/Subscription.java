@@ -1,5 +1,7 @@
 package com.mgg;
 
+//Models a Subscription, a type of item
+
 public class Subscription extends Item {
 
 	private Double annualFee;
