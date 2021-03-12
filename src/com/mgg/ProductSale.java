@@ -4,19 +4,13 @@ package com.mgg;
 
 public class ProductSale extends Item {
 
-	public ProductSale(String code, String type, String name, Item item, int quantity) {
+	public ProductSale(String code, String type, String name, int quantity) {
 		super(code, type, name);
-		this.item = item;
 		this.quantity = quantity;
 	}
 	
-	private Item item;
 	private int quantity;
-	
-	public Item getItem() {
-		return item;
-	}
-	
+		
 	public int getQuantity() {
 		return quantity;
 	}

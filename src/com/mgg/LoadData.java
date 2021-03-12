@@ -7,8 +7,8 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class LoadData {
-
-	//File input from persons.csv
+	
+		//File input from persons.csv
 		//Reads from the csv file and adds it to a list
 		public static List<Person> parsePersonFile() {
 			List<Person> result = new ArrayList<Person>();
@@ -66,10 +66,11 @@ public class LoadData {
 						String tokens[] = line.split(",");
 						String storeCode = tokens[0];
 						
+						//Running the given manager code through a list of
+						//people to have the manager be listed as a Person
 						Person manager = null;
-						List<Person> personList = parsePersonFile();
-						for (Person p : personList) {
-							if (tokens[1] == p.getPersonCode()) {
+						for (Person p : parsePersonFile()) {
+							if (tokens[1].equals(p.getPersonCode())) {
 								manager = p;
 							}
 						}
@@ -123,6 +124,75 @@ public class LoadData {
 						}
 						
 						result.add(i);
+					}
+				}
+			} catch(Exception e) {
+				throw new RuntimeException(e);
+			}
+			
+			return result;
+		}
+		
+		//File input from Sales.csv
+		public static List<Sale> parseSaleFile() {
+			List<Sale> result = new ArrayList<Sale>();
+			File f = new File("data/Sales.csv");
+			try(Scanner s = new Scanner(f)) {
+				String line = s.nextLine(); 
+				while(s.hasNext()) {
+					line = s.nextLine();
+					if(!line.trim().isEmpty()) {
+						String tokens[] = line.split(",");
+						String salesCode = tokens[0];
+						String storeCode = tokens[1];
+						String customerCode = tokens[2];
+						String salespersonCode = tokens[3];
+						
+						//Running the first given item code through a list of
+						//items to determine what kind of item it is, then looping
+						//through all the items to add to Sale.java's itemList
+						List<Item> itemList = new ArrayList<Item>();
+						List<Item> allItems = new ArrayList<Item>();
+						allItems = parseItemFile();
+						
+						for (int i=4; i<tokens.length;i+=2) {
+							for (Item j : allItems) {
+
+								
+								if (tokens[i].equals(j.getCode())) {
+									//Find out what type of item it is and 
+									//add appropriate data to result 
+									if (j.getType().equals("PN") || j.getType().equals("PU")) {
+										Item productSale = new ProductSale(j.getCode(), 
+												j.getType(), j.getName(), Integer.parseInt(tokens[i+1]));
+										itemList.add(productSale);
+									} 
+									else if (j.getType().equals("PG")) {
+										Item giftCardSale = new GiftCardSale(j.getCode(), 
+												j.getType(), j.getName(), Double.parseDouble(tokens[i+1]));
+										itemList.add(giftCardSale);
+									}
+									else if (j.getType().equals("SV")) {
+										Item serviceSale = new ServiceSale(j.getCode(),
+												j.getType(), j.getName(), tokens[i+1], 
+												Double.parseDouble(tokens[i+2]));
+										itemList.add(serviceSale);
+										i++;
+									}
+									else if (j.getType().equals("SB")) {
+										Item subscriptionSale = new SubscriptionSale(j.getCode(), 
+												j.getType(), j.getName(), tokens[i+1], tokens[i+2]);
+										itemList.add(subscriptionSale);
+										i++;
+									}
+								}
+							}							
+						}
+						
+						//System.out.println(salesCode);
+						
+						result.add(new Sale(salesCode, storeCode, customerCode, salespersonCode, itemList));
+						
 					}
 				}
 			} catch(Exception e) {

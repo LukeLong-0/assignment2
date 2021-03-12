@@ -1,11 +1,14 @@
 package com.mgg;
 
+import java.util.ArrayList;
+import java.util.List;
+
 //Models an item (there are many subtypes of Item)
 
 public abstract class Item {
 	
 	private String code;
-	private static String type;
+	private String type;
 	private String name;
 	private String typeName;
 	private Double cost;
@@ -20,7 +23,7 @@ public abstract class Item {
 		return code;
 	}
 	
-	public static String getType() {
+	public String getType() {
 		return type;
 	}
 	
@@ -32,4 +35,5 @@ public abstract class Item {
 	
 	public abstract Double getCost();
 	
+		
 }

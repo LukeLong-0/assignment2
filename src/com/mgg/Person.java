@@ -8,7 +8,7 @@ import java.util.Set;
 public abstract class Person {
 	
 	private String personCode;
-	private static char membershipCode;
+	private char membershipCode;
 	private String lastName;
 	private String firstName;
 	private Address address;
@@ -31,7 +31,7 @@ public abstract class Person {
 		return personCode;
 	}
 	
-	public static char getMembershipCode() {
+	public char getMembershipCode() {
 		return membershipCode;
 	}
 	
