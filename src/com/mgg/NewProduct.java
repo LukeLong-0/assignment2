@@ -22,7 +22,12 @@ public class NewProduct extends Item {
 	
 	@Override
 	public Double getCost() {
-		return this.basePrice + (this.basePrice * 0.0725);
+		return null;
+	}
+
+	@Override
+	public Double getTaxRate() {
+		return 0.0725;
 	}
 	
 }

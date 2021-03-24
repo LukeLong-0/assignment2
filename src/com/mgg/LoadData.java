@@ -1,14 +1,18 @@
 package com.mgg;
 import java.io.File;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
+//A series of methods that loads data into lists.
+//Data is loaded from several CSV files.
+
 public class LoadData {
 	
-		//File input from persons.csv
+		//File input from Persons.csv
 		//Reads from the csv file and adds it to a list
 		public static List<Person> parsePersonFile() {
 			List<Person> result = new ArrayList<Person>();
@@ -33,12 +37,12 @@ public class LoadData {
 						//Determine what kind of member each person is, and creates
 						//the appropriate subclass of person
 						if(tokens[1].equals("C")) {
-							p = new Customer(personCode, membershipCode, lastName, firstName, address, emails);
+							p = new Customer(personCode, membershipCode, lastName, firstName, address, emails, "Customer", 0.0);
 						} else if(tokens[1].equals("G")) {
-							p = new Gold(personCode, membershipCode, lastName, firstName, address, emails);
+							p = new Customer(personCode, membershipCode, lastName, firstName, address, emails, "GoldCustomer,", 0.05);
 						} else if(tokens[1].equals("P")) {
-							p = new Platinum(personCode, membershipCode, lastName, firstName, address, emails);
-						} else if(tokens[1].equals("E")) {
+							p = new Customer(personCode, membershipCode, lastName, firstName, address, emails, "PlatinumCustomer", .1);
+						} else {
 							p = new Employee(personCode, membershipCode, lastName, firstName, address, emails);
 						}
 						
@@ -53,7 +57,7 @@ public class LoadData {
 			return result;
 		}
 		
-		//File input from stores.csv
+		//File input from Stores.csv
 		public static List<Store> parseStoreFile() {
 			List<Store> result = new ArrayList<Store>();
 			File f = new File("data/Stores.csv");
@@ -89,7 +93,7 @@ public class LoadData {
 			return result;
 		}
 		
-		//File input from items.csv
+		//File input from Items.csv
 		public static List<Item> parseItemFile() {
 			List<Item> result = new ArrayList<Item>();
 			File f = new File("data/Items.csv");
@@ -116,10 +120,10 @@ public class LoadData {
 						} else if(tokens[1].equals("PU")) {
 							i = new UsedProduct(code, type, name, price);
 						} else if(tokens[1].equals("PG")) {
-							i = new GiftCard(code, type, name, null);
+							i = new GiftCard(code, type, name);
 						} else if(tokens[1].equals("SV")) {
 							i = new Service(code, type, name, price);
-						} else if(tokens[1].equals("SB")) {
+						} else  {
 							i = new Subscription(code, type, name, price);
 						}
 						
@@ -145,14 +149,27 @@ public class LoadData {
 						String tokens[] = line.split(",");
 						String salesCode = tokens[0];
 						String storeCode = tokens[1];
-						String customerCode = tokens[2];
+						
+						String customerCode = tokens[2]; 
+						Person customer = new Customer(null, 'h', null, null, null, null, null, null); //placeholder initialization			
 						String salespersonCode = tokens[3];
+						Person salesperson = new Employee(null, 'h', null, null, null, null);
+						List<Person> people = new ArrayList<Person>();
+						people = parsePersonFile();
+						for (Person p : people) {
+							if (p.getPersonCode().equals(customerCode)) {
+								customer = p;
+							}
+							else if (p.getPersonCode().equals(salespersonCode)) {
+								salesperson = p;
+							}
+						}
 						
 						//Running the first given item code through a list of
 						//items to determine what kind of item it is, then looping
 						//through all the items to add to Sale.java's itemList
-						List<Item> itemList = new ArrayList<Item>();
-						List<Item> allItems = new ArrayList<Item>();
+						List<Item> itemList = new ArrayList<Item>(); //Item list given to Sale.java
+						List<Item> allItems = new ArrayList<Item>(); //List of all items in Items.csv
 						allItems = parseItemFile();
 						
 						for (int i=4; i<tokens.length;i+=2) {
@@ -162,26 +179,36 @@ public class LoadData {
 								if (tokens[i].equals(j.getCode())) {
 									//Find out what type of item it is and 
 									//add appropriate data to result 
-									if (j.getType().equals("PN") || j.getType().equals("PU")) {
-										Item productSale = new ProductSale(j.getCode(), 
-												j.getType(), j.getName(), Integer.parseInt(tokens[i+1]));
-										itemList.add(productSale);
+									if (j.getType().equals("PN")) {
+										Item NewProductSale = new NewProductSale(j.getCode(), j.getType(), 
+												j.getName(), ((NewProduct) j).getBasePrice(), 
+												Integer.parseInt(tokens[i+1]));
+										itemList.add(NewProductSale);
 									} 
+									else if (j.getType().equals("PU")) {
+										Item UsedProductSale = new UsedProductSale(j.getCode(), j.getType(), 
+												j.getName(), ((UsedProduct) j).getBasePrice(), 
+												Integer.parseInt(tokens[i+1]));
+										itemList.add(UsedProductSale);
+									}
 									else if (j.getType().equals("PG")) {
 										Item giftCardSale = new GiftCardSale(j.getCode(), 
-												j.getType(), j.getName(), Double.parseDouble(tokens[i+1]));
+												j.getType(), j.getName(), Double.valueOf(tokens[i+1]));
 										itemList.add(giftCardSale);
 									}
 									else if (j.getType().equals("SV")) {
+										
+										
 										Item serviceSale = new ServiceSale(j.getCode(),
-												j.getType(), j.getName(), tokens[i+1], 
-												Double.parseDouble(tokens[i+2]));
+												j.getType(), j.getName(), ((Service) j).getHourlyRate(), 
+												salesperson, Double.valueOf(tokens[i+2]));
 										itemList.add(serviceSale);
 										i++;
 									}
-									else if (j.getType().equals("SB")) {
+									else {
 										Item subscriptionSale = new SubscriptionSale(j.getCode(), 
-												j.getType(), j.getName(), tokens[i+1], tokens[i+2]);
+												j.getType(), j.getName(), ((Subscription) j).getAnnualFee(), 
+												LocalDate.parse(tokens[i+1]), LocalDate.parse(tokens[i+2]));
 										itemList.add(subscriptionSale);
 										i++;
 									}
@@ -191,7 +218,7 @@ public class LoadData {
 						
 						//System.out.println(salesCode);
 						
-						result.add(new Sale(salesCode, storeCode, customerCode, salespersonCode, itemList));
+						result.add(new Sale(salesCode, storeCode, customer, salesperson, itemList));
 						
 					}
 				}

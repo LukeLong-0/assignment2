@@ -1,6 +1,9 @@
 package com.mgg;
 
-public class GiftCardSale extends Item{
+//Models an instance of a gift card
+//in the context of a sale
+
+public class GiftCardSale extends GiftCard {
 
 	public GiftCardSale(String code, String type, String name, Double cardAmount) {
 		super(code, type, name);
@@ -9,20 +12,14 @@ public class GiftCardSale extends Item{
 
 
 	private Double cardAmount;
-
-
 	
 	public Double getCardAmount() {
 		return cardAmount;
 	}
-	
-	public String getTypeName() {
-		return "Gift Card";
-	}
-
+		
 	@Override
 	public Double getCost() {
-		return null;
+		return cardAmount;
 	}
 	
 }

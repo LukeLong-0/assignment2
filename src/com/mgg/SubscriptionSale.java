@@ -1,21 +1,27 @@
 package com.mgg;
 
-public class SubscriptionSale extends Item {
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
-	public SubscriptionSale(String code, String type, String name, String beginDate, String endDate) {
-		super(code, type, name);
+//Models an instance of a subscription
+//in the context of a sale
+
+public class SubscriptionSale extends Subscription {
+
+	public SubscriptionSale(String code, String type, String name, Double annualFee, LocalDate beginDate, LocalDate endDate) {
+		super(code, type, name, annualFee);
 		this.beginDate = beginDate;
 		this.endDate = endDate;
 	}
 
-	private String beginDate;
-	private String endDate;
+	private LocalDate beginDate;
+	private LocalDate endDate;
 		
-	public String getBeginDate() {
+	public LocalDate getBeginDate() {
 		return beginDate;
 	}
 	
-	public String getEndDate() {
+	public LocalDate getEndDate() {
 		return endDate;
 	}
 
@@ -26,9 +32,17 @@ public class SubscriptionSale extends Item {
 
 	@Override
 	public Double getCost() {
-		return null;
+		Double result = (this.getDaysBetween() / 365.0) * this.getAnnualFee();
+
+		result = Math.round(result * 100.0) / 100.0;
+		
+		return result;
 	}
 	
-	
+	public Double getDaysBetween() {
+		Double result = ((this.beginDate.until(this.endDate, ChronoUnit.DAYS)+ 1l)/1.0);
+		
+		return result;
+	}
 	
 }

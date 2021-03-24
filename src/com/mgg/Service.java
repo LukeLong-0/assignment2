@@ -20,9 +20,13 @@ public class Service extends Item {
 		return "Service";
 	}
 	
-	@Override
 	public Double getCost() {
 		return null;
+	}
+
+	@Override
+	public Double getTaxRate() {
+		return 0.0285;
 	}
 
 }

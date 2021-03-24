@@ -24,5 +24,10 @@ public class Subscription extends Item {
 	public Double getCost() {
 		return null;
 	}
+
+	@Override
+	public Double getTaxRate() {
+		return 0.0;
+	}
 	
 }
