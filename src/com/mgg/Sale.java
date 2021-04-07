@@ -99,27 +99,43 @@ public class Sale {
 		//Sale information
 		System.out.printf("Item%68s\n", "Total");
 		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                          -=-=-=-=-=-");
-		
-		Double fullGrandTotal = 0.0;
+
+		Double subtotal = 0.0;
+		Double fullTax = 0.0;
 		for (Item i : this.getItems()) {
-			System.out.printf("%s\n   (%s #%s",i.getName(), i.getTypeName(), i.getCode());
+			System.out.printf("%-61s$%10.2f\n    ", i.getName(), i.getTotalCost());
+			StringBuilder sb = new StringBuilder();
+			sb.append(String.format("(%s #%s", i.getTypeName(), i.getCode()));
 			if (i.getType().equals("PN") || i.getType().equals("PU")) {
-				System.out.printf(" @$%.2f/ea", i.getCost());
+				sb.append(String.format(" @$%.2f/ea)", i.getCost()));
+			} else if (i.getType().equals("PG")){
+				sb.append(")");
 			} else if (i.getType().equals("SV")) {
 				String employeeName = (((ServiceSale) i).getEmployee().getLastName()+", "+((ServiceSale) i).getEmployee().getFirstName());
-				System.out.printf(" by %s %.2fhrs@$%.2f/hr", employeeName, ((ServiceSale) i).getNumberOfHours(),
-						((ServiceSale) i).getHourlyRate());
+				sb.append(String.format(" by %s %.2fhrs@$%.2f/hr)", employeeName, ((ServiceSale) i).getNumberOfHours(),
+						((ServiceSale) i).getHourlyRate(), null));
 			} else if (i.getType().equals("SB")) {
 				Double time = ((SubscriptionSale) i).getDaysBetween();
-				System.out.printf(" %.0f days@$%.2f/yr", time, ((SubscriptionSale) i).getAnnualFee());
+				sb.append(String.format(" %.0f days @$%.2f/yr)", time, ((SubscriptionSale) i).getAnnualFee()));
 			}
-			System.out.printf("%-20s $ %10.2f\n", ")", i.getCost());
-			fullGrandTotal += i.getCost();
-			fullGrandTotal = Math.round(fullGrandTotal * 100.0) / 100.0;
+			
+			System.out.printf("%s\n", sb.toString());
+			subtotal += i.getCost();
+			fullTax += i.getTax();
+			
 		}
-		System.out.println("                                                             -=-=-=-=-=-");
-		System.out.println("                                                    Grand total $"+fullGrandTotal);
+		
+		Double fullDiscount = (subtotal + fullTax) * customer.getDiscount();
+		fullDiscount = Math.round(fullDiscount * 100.0) / 100.0;
+		String discountString = String.format("Discount (%.2f)", customer.getDiscount() * 100.0);
+		
+		Double fullGrandTotal = subtotal + fullTax - fullDiscount;
+		
+		System.out.printf("%72s\n", "-=-=-=-=-=-");
+		System.out.printf("%60s $%10.2f\n", "Subtotal", subtotal);
+		System.out.printf("%60s $%10.2f\n", "Tax", fullTax);
+		System.out.printf("%60s $%10.2f\n", discountString, fullDiscount);
+		System.out.printf("%60s $%10.2f\n", "Grand total", fullGrandTotal);
 	} 
-	
 	
 }
