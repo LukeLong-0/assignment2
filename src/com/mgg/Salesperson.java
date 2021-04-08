@@ -31,12 +31,12 @@ public class Salesperson extends Employee {
 	public static void salespersonReport() {
 		
 		List<Person> people = new ArrayList<Person>();//List of all people
-		people = LoadData.parsePersonFile();
+		people = LoadDataCSV.parsePersonFile();
 				
 		List<Person> employees = new ArrayList<Person>();//List of all employees
 		
 		List<Sale> sales = new ArrayList<Sale>();
-		sales = LoadData.parseSaleFile();
+		sales = LoadDataCSV.parseSaleFile();
 		
 		int saleCount = 0; //Total number of sales for an individual salesperson
 		int fullSaleCount = 0; //Total number of sales among all salespeople

@@ -30,16 +30,16 @@ public class Store {
 	public Address getAddress() {
 		return address;
 	}
-	
+				
 	//Prints out a detailed report of all the stores, 
 	//and also calls the salesReport() method on a loop.
 	public static void storeReport() {
-						
+		
 		List<Sale> sales = new ArrayList<Sale>();
-		sales = LoadData.parseSaleFile();
+		sales = LoadDataCSV.parseSaleFile();
 		
 		List<Store> stores = new ArrayList<Store>();
-		stores = LoadData.parseStoreFile();
+		stores = LoadDataCSV.parseStoreFile();
 		
 		int totalSales = 0;
 		int fullSaleCount = 0; //Total number of sales among all salespeople

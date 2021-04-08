@@ -79,7 +79,7 @@ public class Sale {
 			}
 			count++;
 		}
-		System.out.printf("    %4s\n    %4s, %s %d %s\n\n", customer.getAddress().getStreet(), customer.getAddress().getCity(), 
+		System.out.printf("    %4s\n    %4s, %s %s %s\n\n", customer.getAddress().getStreet(), customer.getAddress().getCity(), 
 				customer.getAddress().getState(), customer.getAddress().getZip(), customer.getAddress().getCountry());
 		
 		//Print salesperson information
@@ -93,7 +93,7 @@ public class Sale {
 			}
 			count++;
 		}
-		System.out.printf("    %4s\n    %4s, %s %d %s\n\n", salesperson.getAddress().getStreet(), salesperson.getAddress().getCity(), 
+		System.out.printf("    %4s\n    %4s, %s %s %s\n\n", salesperson.getAddress().getStreet(), salesperson.getAddress().getCity(), 
 				salesperson.getAddress().getState(), salesperson.getAddress().getZip(), salesperson.getAddress().getCountry());
 		
 		//Sale information

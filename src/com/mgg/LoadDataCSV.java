@@ -8,12 +8,12 @@ import java.util.Scanner;
 import java.util.Set;
 
 //A series of methods that loads data into lists.
-//Data is loaded from several CSV files.
+//Data is loaded from several .CSV files.
 
-public class LoadData {
+public class LoadDataCSV {
 	
 		//File input from Persons.csv
-		//Reads from the csv file and adds it to a list
+		//Reads from the .csv file and adds it to a list
 		public static List<Person> parsePersonFile() {
 			List<Person> result = new ArrayList<Person>();
 			File f = new File("data/Persons.csv");
@@ -28,8 +28,7 @@ public class LoadData {
 						char membershipCode = tokens[1].charAt(0);
 						String lastName = tokens[2];
 						String firstName = tokens[3];
-						Address address = new Address(tokens[4], tokens[5], tokens[6], 
-								Integer.parseInt(tokens[7]), tokens[8]);
+						Address address = new Address(tokens[4], tokens[5], tokens[6], tokens[7], tokens[8]);
 						Set<String> emails = new HashSet<String>();
 						for (int i = 9; i<tokens.length; i++) { //Checks for any and all possible emails
 							emails.add(tokens[i]);
@@ -79,8 +78,7 @@ public class LoadData {
 							}
 						}
 						
-						Address address = new Address(tokens[2], tokens[3], tokens[4], 
-								Integer.parseInt(tokens[5]), tokens[6]);
+						Address address = new Address(tokens[2], tokens[3], tokens[4], tokens[5], tokens[6]);
 						h = new Store(storeCode, manager, address);
 						result.add(h);
 					}
@@ -123,7 +121,7 @@ public class LoadData {
 							i = new GiftCard(code, type, name);
 						} else if(tokens[1].equals("SV")) {
 							i = new Service(code, type, name, price);
-						} else  {
+						} else {
 							i = new Subscription(code, type, name, price);
 						}
 						
