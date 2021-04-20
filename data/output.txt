@@ -1,0 +1,164 @@
++-----------------------------------------------------+
+| Salesperson Summary Report                          |
++-----------------------------------------------------+
+Salesperson                    # Sales    Grand Total
+Everts, Benjamin               2          $   7472.68
+Smith, John                    2          $    512.53
+Long, Luke                     2          $   1405.38
++-----------------------------------------------------+
+                               6          $   9390.59
++----------------------------------------------------------------+
+| Store Sales Summary Report                                     |
++----------------------------------------------------------------+
+Store      Manager                        # Sales    Grand Total
+8sj289     Smith, John                    1          $   6828.78
+7bb28      Long, Luke                     1          $    199.99
+12bd27     Long, Luke                     4          $   2361.82
++----------------------------------------------------------------+
+                                          6          $   9390.59
+SaleSaLe002
+Store 8sj289
+Customer:
+Vivian, Nguyen ([catlvr22@yahoo.com])
+    1234 Cool Lane
+    Nowhere, NE 81288 US
+
+Sales Person:
+Everts, Benjamin ([benstinkssobad@outlook.com, benstinks@gmail.com])
+    8263 Stacey Lane
+    Moscow, NE 62786 Russia
+
+Item                                                               Total
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                          -=-=-=-=-=-
+Nintendo Switch                                              $    321.74
+    (New Product #1qwerr @$299.99/ea)
+Gamer Gunk Removal                                           $    452.49
+    (Service #9sna2nd by Everts, Benjamin 5.50hrs@$79.99/hr)
+PlayStation Plus                                             $   6054.55
+    (Subscription #gva15vz 36838 days @$59.99/yr)
+                                                             -=-=-=-=-=-
+                                                    Subtotal $   6794.49
+                                                         Tax $     34.29
+                                             Discount (0.00) $      0.00
+                                                 Grand total $   6828.78
+SaleSaLE003
+Store  7bb28
+Customer:
+Brendan, Crimmins ([poopypants@hugedomains.com, epicfisherman@umich.edu])
+    9821 Pleasure Point
+    Lincoln, NE 91277 US
+
+Sales Person:
+Smith, John ([ihatethis18@gmail.com])
+    2916 Center St
+    Lyons, MI 71936 US
+
+Item                                                               Total
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                          -=-=-=-=-=-
+Doritos                                                      $     22.45
+    (New Product #4bxwvn @$20.93/ea)
+Wipeout                                                      $      4.28
+    (Used Product #5bs281n @$3.99/ea)
+Nintendo DS Lite                                             $     70.33
+    (Used Product #7js2t8hw @$65.58/ea)
+Nintendo Wii                                                 $    102.93
+    (Used Product #8anb251 @$95.97/ea)
+                                                             -=-=-=-=-=-
+                                                    Subtotal $    186.47
+                                                         Tax $     13.52
+                                             Discount (0.00) $      0.00
+                                                 Grand total $    199.99
+Sale  SL399
+Store 12bd27
+Customer:
+Max, Mahony ([newyorknewschmork@sogou.com, mmmmmmmahony@patch.com])
+    1298 Howard Circle
+    Los Angeles, CA 74828 US
+
+Sales Person:
+Long, Luke ([longlegs@gmail.com, gingerboi420@amazon.co.uk, dawgkillerxd@google.es])
+    4783 Swag St
+    Rome, NE 92786 Italy
+
+Item                                                               Total
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                          -=-=-=-=-=-
+Celeste (Digital Copy)                                       $     45.02
+    (New Product #3gshuw @$41.98/ea)
+Fortnite V-Bucks                                             $     53.61
+    (Gift Card #c26bd7h)
+Professional LARPer                                          $   1347.23
+    (Service #e2xb16h by Everts, Benjamin 10.00hrs@$130.99/hr)
+                                                             -=-=-=-=-=-
+                                                    Subtotal $   1401.87
+                                                         Tax $     43.99
+                                             Discount (5.00) $     72.29
+                                                 Grand total $   1373.57
+Sale SL3x83
+Store 12bd27
+Customer:
+Samuel, Becker ([beanieman63@gmail.com])
+    9373 Jim Junction
+    New Orleans, LA 12798 US
+
+Sales Person:
+Everts, Benjamin ([benstinkssobad@outlook.com, benstinks@gmail.com])
+    8263 Stacey Lane
+    Moscow, NE 62786 Russia
+
+Item                                                               Total
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                          -=-=-=-=-=-
+Nintendo Switch                                              $    643.48
+    (New Product #1qwerr @$599.98/ea)
+Nintendo Wii                                                 $     34.31
+    (Used Product #8anb251 @$31.99/ea)
+                                                             -=-=-=-=-=-
+                                                    Subtotal $    631.97
+                                                         Tax $     45.82
+                                             Discount (5.00) $     33.89
+                                                 Grand total $    643.90
+Sale    S99
+Store 12bd27
+Customer:
+Damascus, Dane ([isitoveryet37@gmail.com])
+    1872 Crazy St
+    Rapids, NE 12083 US
+
+Sales Person:
+Smith, John ([ihatethis18@gmail.com])
+    2916 Center St
+    Lyons, MI 71936 US
+
+Item                                                               Total
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                          -=-=-=-=-=-
+Wipeout                                                      $      8.56
+    (Used Product #5bs281n @$7.98/ea)
+Loot Gaming Box                                              $    338.71
+    (Subscription #i16anmw 397 days @$311.41/yr)
+                                                             -=-=-=-=-=-
+                                                    Subtotal $    346.69
+                                                         Tax $      0.58
+                                            Discount (10.00) $     34.73
+                                                 Grand total $    312.54
+Sale   SBC5
+Store 12bd27
+Customer:
+Jim, Hausman ([mrglassesguy92@sogou.com, grumpyangryman@lol.edu])
+    1987 Present Pass
+    Las Vegas, NV 82763 US
+
+Sales Person:
+Long, Luke ([longlegs@gmail.com, gingerboi420@amazon.co.uk, dawgkillerxd@google.es])
+    4783 Swag St
+    Rome, NE 92786 Italy
+
+Item                                                               Total
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                          -=-=-=-=-=-
+Doritos                                                      $     12.83
+    (New Product #4bxwvn @$11.96/ea)
+Nintendo eShop                                               $     22.51
+    (Gift Card #b51fv72)
+                                                             -=-=-=-=-=-
+                                                    Subtotal $     32.95
+                                                         Tax $      2.39
+                                            Discount (10.00) $      3.53
+                                                 Grand total $     31.81

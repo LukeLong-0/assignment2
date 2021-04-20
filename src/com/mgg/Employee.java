@@ -1,8 +1,5 @@
 package com.mgg;
 
-import java.util.ArrayList;
-import java.util.List;
-
 //Models an employee, a type of person
 
 import java.util.Set;
