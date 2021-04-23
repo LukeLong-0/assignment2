@@ -8,6 +8,7 @@ import java.util.List;
 public class SalesReport {
 
 	public static void main(String[] args) {
+
 		List<Sale> sales = new ArrayList<Sale>();
 		sales = LoadDataSQL.getAllSales(); // list of all sales
 
