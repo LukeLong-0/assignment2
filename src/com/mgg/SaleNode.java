@@ -1,25 +1,35 @@
 package com.mgg;
 
-public class SaleNode {
+public class SaleNode<T> {
 
-	private Sale item;
-	private SaleNode next;
+	private final T sale;
+	private SaleNode<T> next;
+	private SaleNode<T> previous;
 	
-	public SaleNode(Sale item) {
-		this.item = item;
+	public SaleNode(T sale) {
+		this.sale = sale;
 		this.next = null;
+		this.previous = null;
 	}
 
-	public SaleNode getNext() {
+	public SaleNode<T> getNext() {
 		return next;
 	}
 
-	public void setNext(SaleNode next) {
+	public void setNext(SaleNode<T> next) {
 		this.next = next;
 	}
 
-	public Sale getItem() {
-		return item;
+	public SaleNode<T> getPrevious() {
+		return previous;
+	}
+
+	public void setPrevious(SaleNode<T> previous) {
+		this.previous = previous;
+	}
+	
+	public T getSale() {
+		return sale;
 	}
 	
 }

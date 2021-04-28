@@ -3,74 +3,65 @@ package com.mgg;
 import java.util.Comparator;
 import java.util.Iterator;
 
-public class SalesList implements Iterable<SaleNode> {
+public class SalesList<T> implements Iterable<SaleNode<T>> {
 	
-	private SaleNode head;
+	private SaleNode<T> head;
 	int size;
-	private Comparator<Person> personComp;
-	private Comparator<Double> doubleComp;
-	String compType;
+	private final Comparator<T> comp;
 	
-	public SalesList(String compType) {
+	public SalesList(Comparator<T> comp) {
 		this.head = null;
 		this.size = 0;
-		this.compType = compType;
+		this.comp = comp;
 	}
 	
 	public int getSize() {
 		return size;
 	}
 	
-	public SaleNode getHead() {
+	public SaleNode<T> getHead() {
 		return head;
 	}
 	
-	public Comparator<SaleNode> getComparator() {
-		return comp;
-	}
-
-	public SalesList add(SalesList list, Sale sale) {
-		
-		Comparator<SaleNode> comp = list.getComparator();
-		
-		SaleNode curr = new SaleNode(sale);
-		curr.setNext(null);
+	public void add(SalesList<T> list, T sale) {
+		SaleNode<T> newNode = new SaleNode<T>(sale);
 		if (list.head == null) {
-			list.head = curr;
+			list.head = newNode;
+			return;
 		}
-		else {
-			
-			for (SaleNode sn : list) {
+		
+		SaleNode<T> curr = list.head;
+		SaleNode<T> previous = null;
+		int result = -1;
 
-				if (list.compType.equals("person")) {
-					Person one = sn.getItem().getCustomer();
-					Person two = sn.getNext().getItem().getCustomer();
-					
-					
-					
-				}
+		//TODO: sale added is the last item of the list
+		while (curr != null) {
+			if (this.comp.compare(curr.getSale(), sale) < 0) {
+				curr = curr.getNext();
+				previous = curr.getPrevious();
 				
+			} else {
+				newNode.setNext(curr);
+				previous.setNext(newNode);
+				return;
 			}
 			
 		}
-		return null;
 	}
 
-	public Iterator<SaleNode> iterator() {
-		return new SalesListIterator(this);
+	public Iterator<SaleNode<T>> iterator() {
+		return new SalesListIterator<T>(this);
 	}
 
 }
 
-class PersonComparator implements Comparator<Person> {
+class PersonComparator implements Comparator<Sale> {
 
-	@Override
-	public int compare(Person o1, Person o2) {
-		int result = (o1.getLastName().compareTo(o2.getLastName()));
+	public int compare(Sale o1, Sale o2) {
+		int result = (o1.getCustomer().getLastName().compareTo(o2.getCustomer().getLastName()));
 		if (result == 0) {
-			result = (o1.getFirstName().compareTo(o2.getFirstName()));
+			result = (o1.getCustomer().getFirstName().compareTo(o2.getCustomer().getFirstName()));
 		}
 		return result;
 	}
-	
 }

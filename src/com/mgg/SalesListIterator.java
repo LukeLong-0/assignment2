@@ -2,11 +2,11 @@ package com.mgg;
 
 import java.util.Iterator;
 
-public class SalesListIterator implements Iterator<SaleNode> {
+public class SalesListIterator<T> implements Iterator<SaleNode<T>> {
 
-	SaleNode current;
+	SaleNode<T> current;
 	
-	public SalesListIterator(SalesList list) {
+	public SalesListIterator(SalesList<T> list) {
 		current = list.getHead();
 	}
 	
@@ -15,8 +15,8 @@ public class SalesListIterator implements Iterator<SaleNode> {
 	}
 
 	@Override
-	public SaleNode next() {
-		SaleNode sale = current;
+	public SaleNode<T> next() {
+		SaleNode<T> sale = current;
 		current = current.getNext();
 		return sale;
 	}
