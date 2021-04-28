@@ -3,7 +3,7 @@ package com.mgg;
 import java.util.Comparator;
 import java.util.Iterator;
 
-public class SalesList<T> implements Iterable<SaleNode<T>> {
+public class SalesList<T> implements Iterable<T> {
 	
 	private SaleNode<T> head;
 	int size;
@@ -31,25 +31,38 @@ public class SalesList<T> implements Iterable<SaleNode<T>> {
 		}
 		
 		SaleNode<T> curr = list.head;
-		SaleNode<T> previous = null;
-		int result = -1;
-
-		//TODO: sale added is the last item of the list
+		
 		while (curr != null) {
 			if (this.comp.compare(curr.getSale(), sale) < 0) {
-				curr = curr.getNext();
-				previous = curr.getPrevious();
-				
+				//add to end
+				if (curr.getNext() == null) {
+					curr.setNext(newNode);
+					newNode.setPrevious(curr);
+					return;
+				}
+				else {
+					curr = curr.getNext();
+				}
 			} else {
-				newNode.setNext(curr);
-				previous.setNext(newNode);
-				return;
+				// add to beginning
+				if (curr.getPrevious() == null) {
+					newNode.setNext(curr);
+					curr.setPrevious(newNode);
+					list.head = newNode;
+					return;
+				}
+				else {
+					newNode.setNext(curr);
+					newNode.setPrevious(curr.getPrevious());
+					curr.getPrevious().setNext(newNode);
+					curr.setPrevious(newNode);
+					return;
+				}
 			}
-			
 		}
 	}
 
-	public Iterator<SaleNode<T>> iterator() {
+	public Iterator<T> iterator() {
 		return new SalesListIterator<T>(this);
 	}
 

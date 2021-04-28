@@ -31,5 +31,4 @@ public class SaleNode<T> {
 	public T getSale() {
 		return sale;
 	}
-	
 }
