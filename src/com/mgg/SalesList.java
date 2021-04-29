@@ -82,16 +82,21 @@ public class SalesList<T> implements Iterable<T> {
 		return;
 	}
 	
-//	public SaleNode<T> get(String saleCode) {
-//		for (T s : this) {
-//			
-//		}
-//	}
+	public T getSaleByIndex(int index) {
+		return this.getNode(index).getSale();
+	}
 
 	public Iterator<T> iterator() {
 		return new SalesListIterator<T>(this);
 	}
-
+	
+	private SaleNode<T> getNode(int index) {
+		SaleNode<T> curr = head;
+		for (int i=0; i<index; i++) {
+			curr = curr.getNext();
+		}
+		return curr;
+	}
 }
 
 class PersonComparator implements Comparator<Sale> {
