@@ -11,7 +11,7 @@ public class SaleNode<T> {
 		this.next = null;
 		this.previous = null;
 	}
-
+	
 	public SaleNode<T> getNext() {
 		return next;
 	}

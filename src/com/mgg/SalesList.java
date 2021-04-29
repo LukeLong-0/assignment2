@@ -23,14 +23,14 @@ public class SalesList<T> implements Iterable<T> {
 		return head;
 	}
 	
-	public void add(SalesList<T> list, T sale) {
+	public void add(T sale) {
 		SaleNode<T> newNode = new SaleNode<T>(sale);
-		if (list.head == null) {
-			list.head = newNode;
+		if (this.head == null) {
+			this.head = newNode;
 			return;
 		}
 		
-		SaleNode<T> curr = list.head;
+		SaleNode<T> curr = this.head;
 		
 		while (curr != null) {
 			if (this.comp.compare(curr.getSale(), sale) < 0) {
@@ -38,6 +38,7 @@ public class SalesList<T> implements Iterable<T> {
 				if (curr.getNext() == null) {
 					curr.setNext(newNode);
 					newNode.setPrevious(curr);
+					this.size++;
 					return;
 				}
 				else {
@@ -48,7 +49,8 @@ public class SalesList<T> implements Iterable<T> {
 				if (curr.getPrevious() == null) {
 					newNode.setNext(curr);
 					curr.setPrevious(newNode);
-					list.head = newNode;
+					this.head = newNode;
+					this.size++;
 					return;
 				}
 				else {
@@ -56,11 +58,35 @@ public class SalesList<T> implements Iterable<T> {
 					newNode.setPrevious(curr.getPrevious());
 					curr.getPrevious().setNext(newNode);
 					curr.setPrevious(newNode);
+					this.size++;
 					return;
 				}
 			}
 		}
 	}
+	
+	public void remove(SaleNode<T> node) {
+		if (head == null || node == null) {
+			return;
+		}
+		if (head == node) {
+			head.setNext(node);
+		}
+		if (node.getNext() != null) {
+			node.getNext().setPrevious(node.getPrevious());
+		}
+		if (node.getPrevious() != null) {
+			node.getPrevious().setNext(node.getNext());
+		}
+		this.size--;
+		return;
+	}
+	
+//	public SaleNode<T> get(String saleCode) {
+//		for (T s : this) {
+//			
+//		}
+//	}
 
 	public Iterator<T> iterator() {
 		return new SalesListIterator<T>(this);
@@ -71,9 +97,35 @@ public class SalesList<T> implements Iterable<T> {
 class PersonComparator implements Comparator<Sale> {
 
 	public int compare(Sale o1, Sale o2) {
-		int result = (o1.getCustomer().getLastName().compareTo(o2.getCustomer().getLastName()));
+		int result = o1.getCustomer().getLastName().compareTo(o2.getCustomer().getLastName());
 		if (result == 0) {
-			result = (o1.getCustomer().getFirstName().compareTo(o2.getCustomer().getFirstName()));
+			result = o1.getCustomer().getFirstName().compareTo(o2.getCustomer().getFirstName());
+		}
+		return result;
+	}
+}
+
+class SaleValueComparator implements Comparator<Sale> {
+
+	@Override
+	public int compare(Sale o1, Sale o2) {
+		return o2.getTotalCost().compareTo(o1.getTotalCost());
+	}
+}
+
+class StoreSalespersonComparator implements Comparator<Sale> {
+
+	@Override
+	public int compare(Sale o1, Sale o2) {
+		int result = o1.getStoreCode().compareTo(o2.getStoreCode());
+		if (result == 0) {
+			result = o1.getSalesperson().getLastName().compareTo(o2.getSalesperson().getLastName());
+			if (result == 0) {
+				result = o1.getSalesperson().getFirstName().compareTo(o2.getSalesperson().getFirstName());
+				if (result == 0) {
+					result = o1.getTotalCost().compareTo(o2.getTotalCost());
+				}
+			}
 		}
 		return result;
 	}

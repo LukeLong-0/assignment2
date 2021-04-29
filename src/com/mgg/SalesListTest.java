@@ -1,33 +1,39 @@
 package com.mgg;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 
 public class SalesListTest {
 
 	public static void main(String[] args) {
 		
-		Customer customer1 = new Customer(null, 'Z', "Smith", "Amy",
-				null, null, null, null);
-		Customer customer2 = new Customer(null, 'Z', "Smith", "John",
-				null, null, null, null);
-		Customer customer3 = new Customer(null, 'Z', "Long", "Luke",
-				null, null, null, null);
-		Sale sale1 = new Sale(null, null, customer1, null, null);
-		Sale sale2 = new Sale(null, null, customer2, null, null);
-		Sale sale3 = new Sale(null, null, customer3, null, null);
+		Customer customer1 = new Customer(null, 'E', "Smith", "Amy",
+				null, null, null, 0.05);
+		Customer customer2 = new Customer(null, 'E', "Smith", "John",
+				null, null, null, 0.05);
+		Customer customer3 = new Customer(null, 'E', "Long", "Luke",
+				null, null, null, 0.05);
+		List<Item> items1 = new ArrayList<Item>();
+		items1.add(new NewProductSale(null, null, null, 100.00, 1));
+		List<Item> items2 = new ArrayList<Item>();
+		items2.add(new NewProductSale(null, null, null, 60.00, 1));
+		List<Item> items3 = new ArrayList<Item>();
+		items3.add(new NewProductSale(null, null, null, 1.00, 1));
 		
-		SalesList<Sale> list = new SalesList<Sale>(new PersonComparator());
+		Sale sale1 = new Sale(null, "BBB", customer1, customer2, items1);
+		Sale sale2 = new Sale(null, "BBB", customer2, customer3, items2);
+		Sale sale3 = new Sale(null, "AAA", customer3, customer1, items3);
 		
-		list.add(list, sale3);
-		list.add(list, sale2);
-		list.add(list, sale1);
+		SalesList<Sale> list = new SalesList<Sale>(new StoreSalespersonComparator());
+		
+		list.add(sale3);
+		list.add(sale2);
+		list.add(sale1);
 		
 		for (Sale sale : list) {
-			System.out.println(sale.getCustomer().getFirstName());
+			System.out.println(sale.getSalesperson().getFirstName());
 		}
+		list.remove(null);
 		
 	}
 
