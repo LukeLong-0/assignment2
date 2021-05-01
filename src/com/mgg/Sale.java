@@ -63,7 +63,7 @@ public class Sale {
 
 		// Print customer information
 		System.out.printf("Sale%7s\nStore%7s\nCustomer:\n", this.getSalesCode(), this.getStoreCode());
-		System.out.printf("%s, %s ([", customer.getFirstName(), customer.getLastName());
+		System.out.printf("%s, %s ([", customer.getLastName(), customer.getFirstName());
 		int count = 0; // Print emails
 		for (String s : customer.getEmails()) {
 			if (count < (customer.getEmails().size() - 1)) {
@@ -134,6 +134,24 @@ public class Sale {
 		System.out.printf("%60s $%10.2f\n", discountString, fullDiscount);
 		System.out.printf("%60s $%10.2f\n", "Grand total", fullGrandTotal);
 
+	}
+	
+	// Simple summary report to show off different kinds of orderings in SalesList
+	public static void simpleSaleReport(SalesList<Sale> sales, String saleString) {
+		String typeString = "| Sales by " + saleString;
+		
+		System.out.println("+-------------------------------------------------------------------------+");
+		System.out.printf("%-74s|\n", typeString);
+		System.out.println("+-------------------------------------------------------------------------+");
+		System.out.println("Sale       Store      Customer             Salesperson          Total\n");
+		
+		for (Sale s : sales) {
+			String custName = s.getCustomer().getLastName() + ", " + s.getCustomer().getFirstName();
+			String salespersonName = s.getSalesperson().getLastName() + ", " + s.getSalesperson().getFirstName(); 
+			System.out.printf("%-11s%-11s%-21s%-21s$%10.2f\n", s.getSalesCode(), s.getStoreCode(), custName, 
+					salespersonName, s.getTotalCost());
+		}
+		
 	}
 
 }

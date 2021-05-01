@@ -2,7 +2,15 @@ package com.mgg;
 
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.List;
 
+/**
+ * A doubly linked list that can support any data type, but is only used for 
+ * sales in this phase.
+ * @author Luke
+ *
+ * @param <T>
+ */
 public class SalesList<T> implements Iterable<T> {
 	
 	private SaleNode<T> head;
@@ -97,8 +105,21 @@ public class SalesList<T> implements Iterable<T> {
 		}
 		return curr;
 	}
+	
+	public void batchAdd(List<T> oldList) {
+		for (T s : oldList) {
+			this.add(s);
+		}
+	}
+	
 }
 
+/**
+ * A comparator that compares based off of a customer's last name, 
+ * and first name if the last names are the same.
+ * @author Luke
+ *
+ */
 class PersonComparator implements Comparator<Sale> {
 
 	public int compare(Sale o1, Sale o2) {
@@ -110,6 +131,11 @@ class PersonComparator implements Comparator<Sale> {
 	}
 }
 
+/**
+ * A comparator that compares based off the USD price of a sale
+ * @author Luke
+ *
+ */
 class SaleValueComparator implements Comparator<Sale> {
 
 	@Override
@@ -118,6 +144,13 @@ class SaleValueComparator implements Comparator<Sale> {
 	}
 }
 
+
+/**
+ * A comparator that compares based off of the store's store code,
+ * and then by salesperson last/first name if the stores are the same.
+ * @author Luke
+ *
+ */
 class StoreSalespersonComparator implements Comparator<Sale> {
 
 	@Override

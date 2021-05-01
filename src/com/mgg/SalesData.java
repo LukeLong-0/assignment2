@@ -114,7 +114,7 @@ public class SalesData {
 	 */
 	public static void addPerson(String personCode, String type, String firstName, String lastName, String street,
 			String city, String state, String zip, String country) {
-
+		
 		addAddress(street, city, state, zip, country);
 
 		Connection conn = null;
@@ -576,6 +576,9 @@ public class SalesData {
 			if (rs.next()) {
 				personId = rs.getInt("personId");
 			}
+			rs.close();
+			ps.close();
+			conn.close();
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}

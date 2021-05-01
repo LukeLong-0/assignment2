@@ -11,15 +11,19 @@ public class SalesReport {
 
 		List<Sale> sales = new ArrayList<Sale>();
 		sales = LoadDataSQL.getAllSales(); // list of all sales
+		
+		SalesList<Sale> personSortedSales = new SalesList<Sale>(new PersonComparator());
+		personSortedSales.batchAdd(sales); // sorted by customer last/first name
 
-		List<Person> employees = new ArrayList<>();
-		employees = LoadDataSQL.getAllEmployees(); // list of all employees
+		SalesList<Sale> valueSortedSales = new SalesList<Sale>(new SaleValueComparator());
+		valueSortedSales.batchAdd(sales); // sorted by value of sale
 
-		List<Store> stores = new ArrayList<Store>();
-		stores = LoadDataSQL.getAllStores(); // list of all stores
-
-		Salesperson.salespersonReport(sales, employees);
-		Store.storeReport(sales, stores);
-
+		SalesList<Sale> storeSortedSales = new SalesList<Sale>(new StoreSalespersonComparator());
+		storeSortedSales.batchAdd(sales); // sorted by store code and salesperson names
+		
+		Sale.simpleSaleReport(personSortedSales, "Customer");
+		Sale.simpleSaleReport(valueSortedSales, "Total");
+		Sale.simpleSaleReport(storeSortedSales, "Store");
+		
 	}
 }
